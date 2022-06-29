@@ -1,6 +1,6 @@
 ARG debian_buster_image_tag=8-jdk-buster
 # FROM openjdk:${debian_buster_image_tag}
-FROM continuumio/miniconda3
+FROM continuumio/miniconda
 
 # -- Layer: OS + Python 3.7
 
@@ -22,20 +22,20 @@ RUN mkdir -p ${shared_workspace} && \
     rm -rf /var/lib/apt/lists/*
 
 # sdkman for scala & maven
-RUN curl -s https://get.sdkman.io | bash
-RUN chmod a+x "$HOME/.sdkman/bin/sdkman-init.sh" && \
-    source "$HOME/.sdkman/bin/sdkman-init.sh" && \
-    sdk install maven && \
-    sdk install scala 2.12.15 && \
-    sdk use scala 2.12.15
+# RUN curl -s https://get.sdkman.io | bash
+# RUN chmod a+x "$HOME/.sdkman/bin/sdkman-init.sh" && \
+#     source "$HOME/.sdkman/bin/sdkman-init.sh" && \
+#     sdk install maven && \
+#     sdk install scala 2.12.15 && \
+#     sdk use scala 2.12.15
 
 # almond.sh for scala jupyter kernel
-RUN curl -Lo coursier https://git.io/coursier-cli && \
-    chmod +x coursier && \
-    ./coursier --help
+# RUN curl -Lo coursier https://git.io/coursier-cli && \
+#     chmod +x coursier && \
+#     ./coursier --help
 
-RUN ./coursier launch --fork almond:0.11.1 -v -v --scala 2.12 -- --install && \
-    rm -f coursier
+# RUN ./coursier launch --fork almond:0.11.1 -v -v --scala 2.12 -- --install && \
+#     rm -f coursier
 
 ENV SHARED_WORKSPACE=${shared_workspace}
 

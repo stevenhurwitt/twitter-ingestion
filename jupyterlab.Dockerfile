@@ -32,5 +32,5 @@ RUN cd /usr/local/lib/python3.7/dist-packages/pyspark/jars/ && \
 
 EXPOSE 8888
 WORKDIR ${SHARED_WORKSPACE}
-CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=
+CMD conda activate twitter && python3 -m src/main/python/main.py
 
