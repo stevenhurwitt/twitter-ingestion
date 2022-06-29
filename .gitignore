@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# virtualenv
+src/main/python/twitter/lib
+src/main/python/twitter/share
