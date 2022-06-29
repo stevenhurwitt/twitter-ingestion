@@ -14,9 +14,13 @@ COPY ./ ${SHARED_WORKSPACE}/
 RUN apt-get update -y && \
     apt-get install -y python3-pip && \
     python3 -m pip install --upgrade pip && \
-    python3 -m pip install pyspark==${spark_version} jupyterlab==${jupyterlab_version} && \
+    conda install -c conda-forge pip && \
+    conda install -c conda-forge pyspark==${spark_version} && \
+    conda install -c conda-forge jupyterlab==${jupyterlab_version} && \
+    conda env import -f ./src/main/python/twitter.yaml -n twitter && \
+    # python3 -m pip install pyspark==${spark_version} jupyterlab==${jupyterlab_version} && \
     # python3 -m pip install /opt/workspace/src/main/python/reddit/dist/reddit-0.1.0-py3-none-any.whl && \
-    python3 -m pip install -r /opt/workspace/src/main/python/requirements.txt --ignore-installed && \
+    # python3 -m pip install -r /opt/workspace/src/main/python/requirements.txt --ignore-installed && \
     rm -rf /var/lib/apt/lists/*
     # ln -s /usr/local/bin/python3 /usr/bin/python
 
