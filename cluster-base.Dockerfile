@@ -1,5 +1,6 @@
 ARG debian_buster_image_tag=8-jdk-buster
-FROM openjdk:${debian_buster_image_tag}
+# FROM openjdk:${debian_buster_image_tag}
+FROM continuumio/miniconda3
 
 # -- Layer: OS + Python 3.7
 
