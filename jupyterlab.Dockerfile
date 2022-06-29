@@ -5,7 +5,7 @@ FROM cluster-base
 ARG spark_version=3.2.0
 ARG jupyterlab_version=3.2.5
 
-COPY ./redditStreaming/ ${SHARED_WORKSPACE}/redditStreaming/
+COPY ./ ${SHARED_WORKSPACE}/
 # COPY ./redditStreaming/creds.json ${SHARED_WORKSPACE}
 # COPY ./redditStreaming/fairscheduler.xml ${SHARED_WORKSPACE}
 # COPY ./redditStreaming/requirements.txt ${SHARED_WORKSPACE}/redditStreaming/
