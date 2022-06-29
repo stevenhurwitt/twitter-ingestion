@@ -3,6 +3,7 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from kafka import kafkaProducer, kafkaConsumer
 from twitter_ingestion import *
+from glue_curation import main
 import datetime as dt
 import json
 import os
