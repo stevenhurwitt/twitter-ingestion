@@ -87,6 +87,9 @@ def main():
                 'OutputLocation': "s3://reddit-stevenhurwitt/_athena_results"
             })
 
+    ## postgres mapping goes here...
+    print("postgres coming soon...")
+
     # job.commit()
     sys.exit()
 
