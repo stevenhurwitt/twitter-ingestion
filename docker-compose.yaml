@@ -39,7 +39,7 @@ volumes:
     driver: local
 services:
   jupyterlab:
-    image: jupyterlab
+    image: stevenhurwitt/jupyterlab:latest
     container_name: jupyterlab
     environment:
       - JUPYTER_TOKEN=easy
@@ -49,7 +49,7 @@ services:
       - shared-workspace:/opt/workspace
       - ./redditStreaming:/opt/workspace/redditStreaming
   spark-master:
-    image: spark-master
+    image: stevenhurwitt/spark-master:latest
     container_name: spark-master
     hostname: spark-master
     ports:
@@ -59,7 +59,7 @@ services:
     volumes:
       - shared-workspace:/opt/workspace
   spark-worker-1:
-    image: spark-worker
+    image: stevenhurwitt/spark-worker:latest
     container_name: spark-worker-1
     environment:
       - SPARK_WORKER_CORES=4
@@ -73,7 +73,7 @@ services:
     depends_on:
       - spark-master
   spark-worker-2:
-    image: spark-worker
+    image: stevenhurwitt/spark-worker:latest
     container_name: spark-worker-2
     environment:
       - SPARK_WORKER_CORES=4
@@ -154,9 +154,9 @@ services:
   postgres:
     image: postgres:13
     environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: ecret!12345
-      POSTGRES_DB: airflow
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Secret!12345
+      POSTGRES_DB: twitter
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
