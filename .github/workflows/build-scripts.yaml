@@ -21,8 +21,8 @@ jobs:
         run: ./push.sh
       - name: pull dockerfiles
         run: ./pull.sh
-      - name: run uberjar
-        run: which java && java ./src/main/scala/target/uber-redditStreaming-1.0-SNAPSHOT.jar
+      # - name: run uberjar
+      #   run: which java && java ./src/main/scala/target/uber-redditStreaming-1.0-SNAPSHOT.jar
       # - name: run docker-compose
       #   uses: sudo-bot/action-docker-compose@latest
       #   with:
