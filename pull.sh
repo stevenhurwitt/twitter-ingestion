@@ -1,1 +1,1 @@
-docker login && docker pull stevenhurwitt/cluster-base:latest && docker pull stevenhurwitt/jupyterlab:latest && docker pull stevenhurwitt/spark-base:latest && docker pull stevenhurwitt/spark-master:latest && docker pull stevenhurwitt/spark-worker:latest
+docker pull stevenhurwitt/cluster-base:latest && docker pull stevenhurwitt/jupyterlab:latest && docker pull stevenhurwitt/spark-base:latest && docker pull stevenhurwitt/spark-master:latest && docker pull stevenhurwitt/spark-worker:latest
