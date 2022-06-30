@@ -134,3 +134,7 @@ src/main/python/twitter/share
 
 # credentials file
 creds.json
+
+# hidden directories
+.vscode
+.metals
