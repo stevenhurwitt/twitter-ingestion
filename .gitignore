@@ -8,9 +8,9 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+# build/
 develop-eggs/
-dist/
+# dist/
 downloads/
 eggs/
 .eggs/
@@ -72,7 +72,7 @@ instance/
 docs/_build/
 
 # PyBuilder
-target/
+# target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -102,13 +102,13 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
+# .env
+# .venv
 # env/
-venv/
+# venv/
 # ENV/
-env.bak/
-venv.bak/
+# env.bak/
+# venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -138,3 +138,6 @@ creds.json
 # hidden directories
 .vscode
 .metals
+terraform/.terraform
+terraform/.terraform.lock.hcl 
+terraform/terraform.tfstate
