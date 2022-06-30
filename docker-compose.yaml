@@ -347,7 +347,8 @@ services:
   #     - airflow
 
   flower:
-    <<: *airflow-common
+    # <<: *airflow-common
+    image: totem/celery-flower-docker
     command: celery flower
     ports:
       - 5555:5555
@@ -357,7 +358,7 @@ services:
       timeout: 10s
       retries: 5
     restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
+    # depends_on:
+    #   <<: *airflow-common-depends-on
+    #   airflow-init:
+    #     condition: service_completed_successfully
