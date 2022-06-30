@@ -13,13 +13,13 @@ jobs:
           name: "creds.json"
           json: ${{ secrets.CREDS }}
           dir: './'
-      - name: build dockerfiles
-        run: ./build.sh
-      - name: run docker-compose
-        uses: sudo-bot/action-docker-compose@latest
-        with:
-            # https://docs.docker.com/compose/reference/overview/
-            cli-args: "up -d"
+      # - name: build dockerfiles
+      #   run: ./build.sh
+      # - name: run docker-compose
+      #   uses: sudo-bot/action-docker-compose@latest
+      #   with:
+      #       # https://docs.docker.com/compose/reference/overview/
+      #       cli-args: "up -d"
   mvn-install:
     runs-on: ubuntu-latest
     steps:
