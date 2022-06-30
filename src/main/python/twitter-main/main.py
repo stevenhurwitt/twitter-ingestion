@@ -9,7 +9,8 @@ import json
 import os
 
 def main():
-    print("function goes here...")
+    print("starting...")
+    twitter_ingestion()
 
 if __name__ == "__main__":
     main()
