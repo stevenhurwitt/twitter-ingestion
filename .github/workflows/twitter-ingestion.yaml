@@ -31,7 +31,7 @@ jobs:
       - uses: olafurpg/setup-scala@v11
         # with:
         #   scala-version: '2.12'
-      - run: cd twitter-ingestion/src/main/scala && mvn clean package
+      - run: cd src/main/scala && mvn clean package
   pip-install:
     runs-on: ubuntu-latest
     steps:
@@ -39,4 +39,4 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: '3.9'
-      - run: pip3 install -r ./src/main/python/requirements.txt && source src/main/python/twitter/bin/activate && pip3 install src/main/python/twitter-main/dist/twitter-*.whl && python3 -m src/main/python/twitter-main/main
+      - run: pip3 install -r ./src/main/python/env/requirements.txt && source src/main/python/twitter/bin/activate && pip3 install src/main/python/twitter-main/dist/twitter-*.whl && python3 -m src/main/python/twitter-main/main
