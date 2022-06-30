@@ -32,11 +32,14 @@ jobs:
         # with:
         #   scala-version: '2.12'
       - run: cd src/main/scala && mvn clean package
-  pip-install:
+  pip-virtualenv:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
         with:
           python-version: '3.9'
-      - run: source /opt/worksapce/twitter-ingestion/src/main/python/twitter/bin/activate && pip3 install -r /opt/workspace/twitter-ingestion/src/main/python/env/requirements.txt && pip3 install /opt/workspace/twitter-ingestion/src/main/python/twitter-main/dist/twitter-*.whl && python3 -m /opt/workspace/twitter-ingestion/src/main/python/twitter-main/main
+      - run: source /opt/worksapce/twitter-ingestion/src/main/python/twitter/bin/activate
+      - run: pip3 install /opt/workspace/twitter-ingestion/src/main/python/twitter-main/dist/twitter-*.whl
+      - run: pip3 install -r /opt/workspace/twitter-ingestion/src/main/python/requirements.txt
+      - run: python3 -m main
