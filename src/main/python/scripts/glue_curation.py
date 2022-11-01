@@ -1,7 +1,6 @@
 from pyspark.context import SparkContext
 from pyspark.sql.session import SparkSession
 from pyspark.sql.functions import *
-from delta.tables import DeltaTable
 from delta import *
 import datetime as dt
 import pandas as pd
@@ -17,7 +16,6 @@ from awsglue.transforms import *
 from awsglue.utils import getResolvedOptions
 from awsglue.context import GlueContext
 from awsglue.job import Job
-import scikit-learn as sk
 from delta.tables import *
 
 pp = pprint.PrettyPrinter(indent = 1)
