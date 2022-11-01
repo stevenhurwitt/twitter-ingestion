@@ -32,8 +32,12 @@ jobs:
         # with:
         #   scala-version: '2.12'
       - run: cd src/main/scala && mvn clean package
-      - run: aws s3 sync src/main/target/* s3://reddit-streaming/target/
-      - run: aws s3 sync src/main/python/twitter-main/dist/twitter-*.whl s3://reddit-streaming/wheel/
+  # s3-sync:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: aws s3 sync src/main/target/* s3://reddit-streaming/target/
+  #     - run: aws s3 sync src/main/python/twitter-main/dist/twitter-*.whl s3://reddit-streaming/wheel/
   # pip-virtualenv:
   #   runs-on: ubuntu-latest
   #   steps:
