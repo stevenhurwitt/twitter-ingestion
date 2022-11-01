@@ -53,7 +53,7 @@ jobs:
         uses: unfor19/install-aws-cli-action@master
         with:
           version: ${{ matrix.AWS_CLI_VERSION }}
-        run: cd twitter-ingestion/scripts && aws s3 sync . s3://twitter-ingestion/scripts/
+        run: cd twitter-ingestion/scripts && aws s3 sync . s3://twitter-stevenhurwitt-final/scripts/
         shell: bash
       - name: aws s3 sync
         run: aws --version
