@@ -43,9 +43,9 @@ jobs:
       - name: python dependencies
         run: sudo apt-get install python3 python3-pip python3-virtualenv
       - name: build reddit
-        run: python3 ./twitter-ingestion/src/main/python/reddit/setup.py bdist_wheel
+        run: python3 ./twitter-ingestion/src/main/python/twitter-main/setup.py bdist_wheel
       - name: install reddit
-        run: pip3 install ./twitter-ingestion/src/main/python/reddit/dist/reddit-0.1.0-py3-none-any.whl --force-reinstall
+        run: pip3 install ./twitter-ingestion/src/main/python/twitter-main/dist/twitter-0.1.0-py3-none-any.whl --force-reinstall
       - name: version check
         run: python3 --version && pip --version
       - name: Test ${{ matrix.TEST_NAME }} ${{ matrix.AWS_CLI_VERSION }}
@@ -55,5 +55,5 @@ jobs:
           version: ${{ matrix.AWS_CLI_VERSION }}
         run: cd twitter-ingestion/src/main/python/scripts && aws s3 sync . s3://twitter-stevenhurwitt-final/scripts/
         shell: bash
-      - name: aws s3 sync
+      - name: aws version
         run: aws --version

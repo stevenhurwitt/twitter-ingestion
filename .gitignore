@@ -145,3 +145,6 @@ terraform/.terraform.lock.hcl
 terraform/terraform.tfstate*
 terraform/tfplan
 terraform/hashicorp
+
+# aws keys
+aws*.txt
