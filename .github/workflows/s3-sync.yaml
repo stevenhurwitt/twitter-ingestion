@@ -42,9 +42,9 @@ jobs:
         run: cat aws_access_key.txt
       - name: python dependencies
         run: sudo apt-get install python3 python3-pip python3-virtualenv
-      - name: build reddit
+      - name: build twitter wheel
         run: python3 ./twitter-ingestion/src/main/python/twitter-main/setup.py bdist_wheel
-      - name: install reddit
+      - name: install twitter wheel
         run: pip3 install ./twitter-ingestion/src/main/python/twitter-main/dist/twitter-0.1.0-py3-none-any.whl --force-reinstall
       - name: version check
         run: python3 --version && pip --version
