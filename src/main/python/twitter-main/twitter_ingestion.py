@@ -29,8 +29,9 @@ def authenticate(filename):
 
 def twitter_ingestion():
     
-    authenticate("creds.json")
-    # print("authenticated successfully.")
+    creds = authenticate("creds.json")
+    print("authenticated successfully.")
+    pp.pprint(creds)
     #...
 
 
