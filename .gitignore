@@ -148,3 +148,6 @@ terraform/hashicorp
 
 # aws keys
 aws*.txt
+
+# cluster_config
+cluster_config
