@@ -47,7 +47,7 @@ services:
       - 8899:8888
     volumes:
       - shared-workspace:/opt/workspace
-      - ./redditStreaming:/opt/workspace/redditStreaming
+      - ./twitter-ingestion:/opt/workspace/twitter-ingestion
   spark-master:
     image: stevenhurwitt/spark-master:latest
     container_name: spark-master
