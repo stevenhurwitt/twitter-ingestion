@@ -57,7 +57,7 @@ notebook-shim==0.1.0
 numpy==1.23.0
 oauthlib==3.2.0
 packaging==21.2
-pandas==1.4.1
+pandas==*
 pandocfilters==1.5.0
 parso==0.8.2
 pexpect==4.8.0
@@ -76,7 +76,7 @@ pyOpenSSL==22.0.0
 pyparsing==2.4.7
 pyrsistent==0.18.0
 PySocks==1.7.1
-pyspark==3.2.0
+pyspark==3.2.2
 python-dateutil==2.8.2
 pytz==2022.1
 pyzmq==22.2.1

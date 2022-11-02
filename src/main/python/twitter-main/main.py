@@ -28,9 +28,13 @@ def main():
 def twitter_ingestion():
     print("twitter ingestion...")
     header = {}
+    spark = SparkSession.Builder.appName("twitter").getOrCreate()
+    sc = spark.SparkContext
     df = spark.read.csv("file.csv", header = True)
+    df.show()
 
-    pass
+    print("done.")
+    return(0)
 
 ###### run main function #####
 
